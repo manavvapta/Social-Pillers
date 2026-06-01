@@ -1,0 +1,26 @@
+{
+  "name": "socialmafia",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.4",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "framer-motion": "^12.40.0",
+    "helmet": "^8.1.0",
+    "lucide-react": "^1.17.0",
+    "react-helmet-async": "^3.0.0",
+    "react-router-dom": "^7.15.1",
+    "react-spring": "^10.0.3"
+  }
+}

@@ -1,0 +1,272 @@
+/* ===== HERO SECTION ===== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(circle at top left, rgba(255, 0, 0, 0.15), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.04), transparent 30%),
+    #050505;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 8%;
+}
+
+/* ===== BACKGROUND GLOW ===== */
+
+.hero::before {
+  content: "";
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: rgba(255, 0, 0, 0.18);
+
+  filter: blur(140px);
+
+  top: -120px;
+  left: -120px;
+
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  filter: blur(130px);
+
+  bottom: -100px;
+  right: -100px;
+
+  border-radius: 50%;
+}
+
+
+/* ===== HERO CONTENT ===== */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  text-align: center;
+  max-width: 950px;
+
+  /* ===== GLASS EFFECT ===== */
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 30px;
+
+  padding: 60px 50px;
+
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.45),
+    0 0 80px rgba(255,0,0,0.08);
+}
+
+/* ===== HERO TAG ===== */
+
+.hero-tag {
+  color: #ff3b3b;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+
+  text-transform: uppercase;
+}
+
+/* ===== HEADING ===== */
+
+.hero-content h1 {
+  color: #ffffff;
+
+  font-size: 95px;
+  line-height: 1;
+  font-weight: 900;
+
+  margin-bottom: 30px;
+
+  text-transform: uppercase;
+}
+
+.hero-content h1 span {
+  color: #ff0000;
+}
+
+/* ===== DESCRIPTION ===== */
+
+.hero-description {
+  color: #ffffff;
+
+  font-size: 18px;
+  line-height: 1.9;
+
+  max-width: 700px;
+  margin: auto;
+
+  margin-bottom: 45px;
+}
+
+/* ===== BUTTONS ===== */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 16px 38px;
+
+  border-radius: 60px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.4s ease;
+}
+
+/* ===== PRIMARY BUTTON ===== */
+
+.primary-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #ff0000,
+      #8b0000
+    );
+
+  color: #ffffff;
+
+  border: none;
+
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.35);
+}
+
+.primary-btn:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 0 40px rgba(255, 0, 0, 0.55);
+}
+
+/* ===== SECONDARY BUTTON ===== */
+
+.secondary-btn {
+  background: rgba(255,255,255,0.04);
+
+  border: 2px solid rgba(255,255,255,0.12);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  background: #ffffff;
+  color: #000000;
+
+  transform: translateY(-6px);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes marquee {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1200px) {
+
+  .hero-content h1 {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding-top: 10px;
+  }
+
+  
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .crime-strip {
+    height: 55px;
+    width: 240%;
+  }
+
+  .strip-track span {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .hero-tag {
+    letter-spacing: 4px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .crime-strip {
+    width: 300%;
+  }
+}

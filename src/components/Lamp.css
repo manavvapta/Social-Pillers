@@ -1,0 +1,205 @@
+/* ===== MAIN SECTION ===== */
+
+.lamp-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background: #050505;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ===== LIGHT AREA ===== */
+
+.lamp-wrapper {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  overflow: hidden;
+}
+
+/* ===== LEFT LIGHT ===== */
+
+.lamp-left {
+  position: absolute;
+
+  top: 0;
+  right: 50%;
+
+  height: 350px;
+  width: 420px;
+
+  background: conic-gradient(
+    from 70deg at top,
+    #ff0000,
+    transparent,
+    transparent
+  );
+
+  filter: blur(10px);
+
+  opacity: 0.9;
+}
+
+/* ===== RIGHT LIGHT ===== */
+
+.lamp-right {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  height: 350px;
+  width: 420px;
+
+  background: conic-gradient(
+    from 290deg at top,
+    transparent,
+    transparent,
+    #ff0000
+  );
+
+  filter: blur(10px);
+
+  opacity: 0.9;
+}
+
+/* ===== CENTER GLOW ===== */
+
+.center-glow {
+  position: absolute;
+
+  top: 120px;
+
+  width: 350px;
+  height: 120px;
+
+  background: #ff0000;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.5;
+}
+
+/* ===== LIGHT LINE ===== */
+
+.light-line {
+  position: absolute;
+
+  top: 140px;
+
+  width: 400px;
+  height: 2px;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 20px #ff0000;
+}
+
+/* ===== CONTENT ===== */
+
+.lamp-content {
+  position: relative;
+  z-index: 10;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+/* ===== TITLE ===== */
+
+.lamp-title {
+  font-size: 70px;
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #999999
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 20px;
+}
+
+/* ===== SUBTITLE ===== */
+
+.lamp-subtitle {
+  color: #cfcfcf;
+
+  font-size: 18px;
+
+  margin-bottom: 30px;
+}
+
+/* ===== BUTTON ===== */
+
+.lamp-btn {
+  padding: 14px 34px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: #ff0000;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.lamp-btn:hover {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+  color: #ff0000;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+  .lamp-title {
+    font-size: 42px;
+  }
+
+  .lamp-subtitle {
+    font-size: 15px;
+  }
+
+  .light-line {
+    width: 250px !important;
+  }
+
+  .center-glow {
+    width: 220px;
+  }
+
+  .lamp-left,
+  .lamp-right {
+    width: 260px !important;
+  }
+}
