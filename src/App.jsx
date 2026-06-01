@@ -1,7 +1,7 @@
 import './style.css'
 import Navbar from "./components/Navbar";
 import Hero from './components/Hero';
-import Lamp from './components/lamp';
+import Lamp from "./components/Lamp";
 import Gallery from './components/Gallery';
 import FeatureGrid from './components/FeatureGrid';
 import Footer from './components/Footer';
