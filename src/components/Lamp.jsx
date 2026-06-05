@@ -68,8 +68,8 @@ const Lamp = () => {
         <p className="lamp-subtitle">
           Together, we combine expertise
           <br />
-          in web development, SEO, paid advertising, <br /> graphic design,and digital
-          marketing  <br />  to help businesses build a strong online presence and
+          In Web Development, SEO, Paid Advertising, <br /> Graphic Design and Digital
+          Marketing  <br />  to help businesses build a strong online presence and
           achieve measurable growth.
         </p>
 
