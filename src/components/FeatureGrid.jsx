@@ -1,54 +1,55 @@
 "use client";
 
-import {
-  Zap,
-  Cpu,
-  Fingerprint,
-  Pencil,
-  Settings2,
-  Sparkles,
-} from "lucide-react";
-
 import { motion } from "framer-motion";
 
 import "./FeatureGrid.css";
 
+
+import {
+  Megaphone,
+  Clapperboard,
+  Camera,
+  BadgeDollarSign,
+  TrendingUp,
+  Target,
+} from "lucide-react";
+
 const features = [
   {
-    title: "Lightning Fast",
-    icon: Zap,
+    title: "Social Media Management",
+    icon: Megaphone,
     description:
-      "High performance experience with ultra smooth animations and fast loading.",
+      "We handle your social media from content planning and posting to audience engagement and growth.",
   },
   {
-    title: "Powerful System",
-    icon: Cpu,
+    title: "Content That Converts",
+    icon: Clapperboard,
     description:
-      "Built with scalable architecture for modern web applications and AI tools.",
+      "Creative content designed to capture attention, build trust, and drive customer action.",
   },
   {
-    title: "Advanced Security",
-    icon: Fingerprint,
+    title: "Product Shoots",
+    icon: Camera,
     description:
-      "Strong security layers to protect your data and users at every level.",
+      "Professional product photography and videos that showcase your brand in the best light.",
   },
   {
-    title: "Easy Customization",
-    icon: Pencil,
+    title: "Paid Ads Expertise",
+    icon: BadgeDollarSign,
     description:
-      "Fully customizable components with clean structure and reusable design.",
+      "Strategic ad campaigns focused on generating quality leads, sales, and measurable results.",
   },
   {
-    title: "Full Control",
-    icon: Settings2,
+    title: "More Leads & Sales",
+    icon: TrendingUp,
     description:
-      "Manage everything with flexibility and complete creative freedom.",
+      "Marketing strategies that help attract the right customers and increase business revenue.",
   },
   {
-    title: "AI Ready",
-    icon: Sparkles,
+    title: "Targeted Audience Reach",
+    icon: Target,
     description:
-      "Designed for AI products, automation workflows, and smart integrations.",
+      "Reach people who are most likely to be interested in your products or services.",
   },
 ];
 
@@ -96,15 +97,7 @@ export default function FeatureGrid() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <motion.span
-            className="feature-badge"
-            initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            WHY CHOOSE US
-          </motion.span>
+          
 
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -112,8 +105,8 @@ export default function FeatureGrid() {
             transition={{ delay: 0.3, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Power. Speed.
-            <span> Control.</span>
+            Why<span> Choose </span>
+            Us ? 
           </motion.h2>
 
           <motion.p
@@ -122,8 +115,7 @@ export default function FeatureGrid() {
             transition={{ delay: 0.5, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Modern feature cards section with premium red, black and white
-            futuristic theme.
+           Because we create content, campaigns, and strategies that help businesses grow online.
           </motion.p>
         </motion.div>
 

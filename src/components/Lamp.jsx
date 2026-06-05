@@ -1,52 +1,56 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 import "./Lamp.css";
 
 const Lamp = () => {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "center center"],
+  });
+
+  const leftX = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+
+  const rightX = useTransform(scrollYProgress, [0, 1], [500, 0]);
+
+  const leftRotate = useTransform(scrollYProgress, [0, 1], [-12, 0]);
+
+  const rightRotate = useTransform(scrollYProgress, [0, 1], [12, 0]);
+
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+
+  const rightOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+
   return (
-    <section className="lamp-section">
+    <section ref={sectionRef} className="lamp-section">
       {/* LIGHT EFFECTS */}
-
       <div className="lamp-wrapper">
-
-        {/* LEFT LIGHT */}
         <motion.div
           initial={{ opacity: 0.4, width: "180px" }}
           whileInView={{ opacity: 1, width: "420px" }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="lamp-left"
         />
 
-        {/* RIGHT LIGHT */}
         <motion.div
           initial={{ opacity: 0.4, width: "180px" }}
           whileInView={{ opacity: 1, width: "420px" }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="lamp-right"
         />
 
-        {/* CENTER GLOW */}
         <div className="center-glow"></div>
 
-        {/* LINE */}
         <motion.div
           initial={{ width: "100px" }}
           whileInView={{ width: "400px" }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="light-line"
         />
-
       </div>
 
       {/* CONTENT */}
@@ -54,24 +58,47 @@ const Lamp = () => {
         <motion.h1
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 0.2,
-          }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="lamp-title"
         >
-          Build Stunning <br />
-          Websites Faster
+          The Faces Behind <br />
+          Social Pillers
         </motion.h1>
 
         <p className="lamp-subtitle">
-          Modern UI Design with smooth animations.
+          Together, we combine expertise
+          <br />
+          in web development, SEO, paid advertising, <br /> graphic design,and digital
+          marketing  <br />  to help businesses build a strong online presence and
+          achieve measurable growth.
         </p>
 
-        <button className="lamp-btn">
-          Get Started
-        </button>
+        <button className="lamp-btn">Get Started</button>
       </div>
+
+      {/* LEFT PORTRAIT */}
+      <motion.img
+        src="/manav1.png"
+        alt="Manav"
+        className="lamp-human lamp-human-left"
+        style={{
+          x: leftX,
+          rotate: leftRotate,
+          opacity: leftOpacity,
+        }}
+      />
+
+      {/* RIGHT PORTRAIT */}
+      <motion.img
+        src="/rajveer1.png"
+        alt="Rajveer"
+        className="lamp-human lamp-human-right"
+        style={{
+          x: rightX,
+          rotate: rightRotate,
+          opacity: rightOpacity,
+        }}
+      />
     </section>
   );
 };
