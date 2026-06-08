@@ -62,7 +62,7 @@ const Lamp = () => {
           className="lamp-title"
         >
           The Faces Behind <br />
-          Social Pillers
+          Social Pillars
         </motion.h1>
 
         <p className="lamp-subtitle">

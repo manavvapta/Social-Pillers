@@ -119,24 +119,24 @@ const Footer = () => {
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return;
-    const items = [
-      "Design",
-      "Development",
-      "Strategy",
-      "Branding",
-      "Growth",
-      "Innovation",
-      "Results",
-    ];
-    const full = [...items, ...items, ...items, ...items];
-    full.forEach((txt, i) => {
-      const el = document.createElement("div");
-      el.className = "ft-marquee-item" + (i % 3 === 1 ? " red" : "");
-      el.innerHTML = `<span class="dot"></span>${txt}`;
-      track.appendChild(el);
-    });
-  }, []);
+  if (!track) return;
+
+  const items = [
+    "Design", "Development", "Strategy", "Branding",
+    "Growth", "Innovation", "Results",
+  ];
+
+  // pehle clear kar
+  track.innerHTML = '';
+
+  const full = [...items, ...items, ...items, ...items];
+  full.forEach((txt, i) => {
+    const el = document.createElement("div");
+    el.className = "ft-marquee-item" + (i % 3 === 1 ? " red" : "");
+    el.innerHTML = `<span class="dot"></span>${txt}`;
+    track.appendChild(el);
+  });
+}, []);
 
   return (
     <div>
@@ -204,7 +204,7 @@ const Footer = () => {
             <div className="ft-brand-col">
               <div>
                 <div className="ft-logo">
-                  Social<span>.</span>Pillers
+                  Social<span>.</span>Pillars
                 </div>
                 <p className="ft-tagline">
                   We craft bold digital experiences that drive results.

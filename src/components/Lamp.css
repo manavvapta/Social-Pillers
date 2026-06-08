@@ -271,11 +271,11 @@
   }
 
   .lamp-human-left {
-    left: -0px;
+    left: -10px;
   }
 
   .lamp-human-right {
-    right: -0px;
+    right: -10px;
   }
 }
 
@@ -284,6 +284,14 @@
 @media (max-width: 480px) {
 
   .lamp-human {
-    height: 45vh;
+    height: 33vh;
+  }
+
+  .lamp-human-left {
+    left: -20px;
+  }
+
+  .lamp-human-right {
+    right: -20px;
   }
 }

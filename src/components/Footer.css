@@ -30,6 +30,15 @@
 }
 
 /* â”€â”€ MARQUEE â”€â”€ */
+.ft-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-run 20s linear infinite;
+  align-items: center;
+  will-change: transform;        /* ✅ GPU acceleration */
+  backface-visibility: hidden;   /* ✅ flickering band */
+}
+
 .ft-marquee-wrap {
   width: 100%;
   overflow: hidden;
@@ -40,12 +49,8 @@
   align-items: center;
   position: relative;
   z-index: 2;
-}
-.ft-marquee-track {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee-run 16s linear infinite;
-  align-items: center;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* ✅ smooth edges */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 @keyframes marquee-run {
   0%   { transform: translateX(0); }

@@ -1,54 +1,49 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import "./Gallery.css";
+import { Link } from "react-router-dom";
 
-const photos = [
-  "https://images.pexels.com/photos/32025694/pexels-photo-32025694/free-photo-of-romantic-wedding-in-ancient-ruins.jpeg",
 
-  "https://images.pexels.com/photos/31596551/pexels-photo-31596551/free-photo-of-winter-scene-with-lake-view-in-van-turkiye.jpeg",
-
-  "https://images.pexels.com/photos/31890053/pexels-photo-31890053/free-photo-of-moody-portrait-with-heart-shaped-light.jpeg",
-
-  "https://images.pexels.com/photos/19936068/pexels-photo-19936068/free-photo-of-women-sitting-on-hilltop-with-clouds-below.jpeg",
-
-  "https://images.pexels.com/photos/20494995/pexels-photo-20494995/free-photo-of-head-of-peacock.jpeg",
-];
+const photos = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"];
 
 const Gallery = () => {
-  const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoaded(true);
-    }, 500);
+const [loaded, setLoaded] = useState(false);
+const sectionRef = useRef(null);
 
-    return () => clearTimeout(timer);
-  }, []);
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setLoaded(true);
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  if (sectionRef.current) observer.observe(sectionRef.current);
+  return () => observer.disconnect();
+}, []);
 
   return (
-    <section className="gallery-section">
-
+    <section className="gallery-section" ref={sectionRef}>
       {/* BACKGROUND GRID */}
       <div className="gallery-grid"></div>
 
       {/* HEADING */}
       <div className="gallery-heading">
-
-        <p className="gallery-subtitle">
-          Creative Visual Collection
-        </p>
+        <p className="gallery-subtitle">Creative Visual Collection</p>
 
         <h2 className="gallery-title">
           Stunning <span>Gallery</span>
         </h2>
-
       </div>
 
       {/* GALLERY */}
       <div className="gallery-wrapper">
-
         {photos.map((photo, index) => (
           <motion.div
             key={index}
@@ -90,10 +85,10 @@ const Gallery = () => {
       </div>
 
       {/* BUTTON */}
-      <button className="gallery-btn">
-        View More
-      </button>
 
+      <Link to="/projects">
+        <button className="gallery-btn">View More</button>
+      </Link>
     </section>
   );
 };
