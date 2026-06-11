@@ -73,7 +73,7 @@ const Lamp = () => {
           achieve measurable growth.
         </p>
 
-        <button className="lamp-btn">Get Started</button>
+        <button className="lamp-btn">Book Free Consultation</button>
       </div>
 
       {/* LEFT PORTRAIT */}

@@ -40,10 +40,10 @@
   right: 50%;
 
   height: 350px;
-  width: 420px;
+  width: 500px;
 
   background: conic-gradient(
-    from 70deg at top,
+    from -290deg at top,
     #ff0000,
     transparent,
     transparent
@@ -63,7 +63,7 @@
   left: 50%;
 
   height: 350px;
-  width: 420px;
+  width: fullq;
 
   background: conic-gradient(
     from 290deg at top,

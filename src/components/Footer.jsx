@@ -273,7 +273,7 @@ const Footer = () => {
               </div>
               <div className="ft-contact-item">
                 <div className="ft-contact-icon">{Icons.mapPin}</div>
-                <div className="ft-contact-text">Ratlam, India</div>
+                <div className="ft-contact-text">Ratlam, Madhya Pradesh, India</div>
               </div>
             </div>
           </div>

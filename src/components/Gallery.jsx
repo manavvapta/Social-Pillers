@@ -38,7 +38,7 @@ useEffect(() => {
         <p className="gallery-subtitle">Creative Visual Collection</p>
 
         <h2 className="gallery-title">
-          Stunning <span>Gallery</span>
+          Featured <span>Work</span>
         </h2>
       </div>
 
@@ -87,7 +87,7 @@ useEffect(() => {
       {/* BUTTON */}
 
       <Link to="/projects">
-        <button className="gallery-btn">View More</button>
+        <button className="gallery-btn">Explore Our Work</button>
       </Link>
     </section>
   );

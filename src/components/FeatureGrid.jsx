@@ -6,50 +6,50 @@ import "./FeatureGrid.css";
 
 
 import {
+  Globe,
+  Search,
   Megaphone,
-  Clapperboard,
-  Camera,
+  PenTool,
   BadgeDollarSign,
   TrendingUp,
-  Target,
 } from "lucide-react";
 
 const features = [
   {
-    title: "Social Media Management",
+    title: "Web Development",
+    icon: Globe,
+    description:
+      "Fast, responsive and conversion-focused websites designed to grow your business online.",
+  },
+  {
+    title: "SEO Optimization",
+    icon: Search,
+    description:
+      "Improve search rankings, increase organic traffic and attract high-intent customers.",
+  },
+  {
+    title: "Social Media Marketing",
     icon: Megaphone,
     description:
-      "We handle your social media from content planning and posting to audience engagement and growth.",
+      "Build your brand presence through strategic content, engagement and audience growth.",
   },
   {
-    title: "Content That Converts",
-    icon: Clapperboard,
+    title: "Graphic Design & Branding",
+    icon: PenTool,
     description:
-      "Creative content designed to capture attention, build trust, and drive customer action.",
+      "Creative designs and visual branding that make your business stand out from competitors.",
   },
   {
-    title: "Product Shoots",
-    icon: Camera,
-    description:
-      "Professional product photography and videos that showcase your brand in the best light.",
-  },
-  {
-    title: "Paid Ads Expertise",
+    title: "Google & Meta Ads",
     icon: BadgeDollarSign,
     description:
-      "Strategic ad campaigns focused on generating quality leads, sales, and measurable results.",
+      "Targeted advertising campaigns focused on generating leads, sales and measurable ROI.",
   },
   {
-    title: "More Leads & Sales",
+    title: "Business Growth Strategy",
     icon: TrendingUp,
     description:
-      "Marketing strategies that help attract the right customers and increase business revenue.",
-  },
-  {
-    title: "Targeted Audience Reach",
-    icon: Target,
-    description:
-      "Reach people who are most likely to be interested in your products or services.",
+      "Data-driven marketing strategies that help businesses scale faster and achieve sustainable growth.",
   },
 ];
 
@@ -105,8 +105,8 @@ export default function FeatureGrid() {
             transition={{ delay: 0.3, duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Why<span> Choose </span>
-            Us ? 
+            What<span> We  </span>
+            Do ? 
           </motion.h2>
 
           <motion.p
@@ -115,7 +115,7 @@ export default function FeatureGrid() {
             transition={{ delay: 0.5, duration: 0.8 }}
             viewport={{ once: true }}
           >
-           Because we create content, campaigns, and strategies that help businesses grow online.
+            We Create Content, Campaigns, And Strategies That Help Businesses Grow Online.
           </motion.p>
         </motion.div>
 

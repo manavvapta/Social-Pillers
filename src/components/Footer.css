@@ -290,14 +290,7 @@
   color: #b5b3b3;
 }
 .ft-bottom-left span { color: #E24B4A; }
-.ft-bottom-right { display: flex; gap: 20px; }
-.ft-bottom-right a {
-  font-size: 11px;
-  color: #b5b3b3;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.ft-bottom-right a:hover { color: #E24B4A; }
+
 
 
 

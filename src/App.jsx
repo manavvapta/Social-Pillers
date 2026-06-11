@@ -1,4 +1,5 @@
 import './style.css'
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Hero from './components/Hero';
@@ -7,6 +8,7 @@ import Gallery from './components/Gallery';
 import FeatureGrid from './components/FeatureGrid';
 import Footer from './components/Footer';
 import Projects from './projects/Projects';
+import Preloader from './components/Preloader';
 
 function Home() {
   return (
@@ -32,6 +34,20 @@ function Home() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
+
   return (
     <BrowserRouter>
       <Routes>

@@ -85,6 +85,25 @@ const Hero = () => {
           OF YOUR <span>BRAND</span>
         </motion.h1>
 
+        <motion.p
+          className="hero-description"
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.7,
+          }}
+        >
+          Helping businesses grow through high-converting websites, SEO, paid
+          advertising, creative design, and result-driven marketing strategies.
+        </motion.p>
+
         <motion.div
           className="hero-buttons"
           initial={{
@@ -100,8 +119,25 @@ const Hero = () => {
             delay: 0.8,
           }}
         >
-          <button className="primary-btn">Instagram</button>
-          
+          <div className="hero-buttons">
+            <a
+              href="https://wa.me/91XXXXXXXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primary-btn"
+            >
+              WhatsApp Us
+            </a>
+
+            <a
+              href="https://instagram.com/socialpillers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="secondary-btn"
+            >
+              Instagram
+            </a>
+          </div>
         </motion.div>
       </motion.div>
 
