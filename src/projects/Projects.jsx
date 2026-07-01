@@ -47,6 +47,19 @@ const categories = [
 ];
 
 const Lightbox = ({ item, onClose }) => {
+  if (!item) return null;
+
+  const getCategoryType = () => {
+    if (!item.category) return 'default';
+    const cat = item.category.toLowerCase();
+    if (cat.includes('reel')) return 'reels';
+    if (cat.includes('post')) return 'posts';
+    if (cat.includes('web')) return 'websites';
+    return 'default';
+  };
+
+  const categoryType = getCategoryType();
+
   return (
     <AnimatePresence>
       {item && (
@@ -58,7 +71,7 @@ const Lightbox = ({ item, onClose }) => {
           onClick={onClose}
         >
           <motion.div
-            className="lightbox-content"
+            className={`lightbox-content lightbox-content-${categoryType}`}
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.7, opacity: 0 }}
@@ -66,7 +79,11 @@ const Lightbox = ({ item, onClose }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <button className="lightbox-close" onClick={onClose}>✕</button>
-            <img src={item.image} alt={item.title} className="lightbox-img" />
+            <img 
+              src={item.image} 
+              alt={item.title} 
+              className={`lightbox-img lightbox-img-${categoryType}`}
+            />
             <div className="lightbox-info">
               <span className="lightbox-category">{item.category}</span>
               <h3 className="lightbox-title">{item.title}</h3>
@@ -85,18 +102,17 @@ const ProjectRow = ({ category, onCardClick }) => {
 
   return (
     <div className="project-row">
-      
       <div className="project-row-label">
         <span className="project-row-emoji">{category.emoji}</span>
         <h3 className="project-row-title">{category.label}</h3>
         <div className="project-row-line" />
       </div>
       <div className="projects-slider-wrapper">
-<div className={`projects-slider ${isReverse ? 'projects-slider-reverse' : ''}`}>
+        <div className={`projects-slider ${isReverse ? 'projects-slider-reverse' : ''}`}>
           {doubled.map((slide, index) => (
             <div
               key={index}
-              className="project-card"
+              className={`project-card project-card-${category.id}`}
               onClick={() => onCardClick(slide)}
             >
               <div className="project-card-img">

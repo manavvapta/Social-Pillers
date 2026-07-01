@@ -260,7 +260,7 @@ const Footer = () => {
               <div className="ft-contact-item">
                 <div className="ft-contact-icon">{Icons.mail}</div>
                 <div className="ft-contact-text">
-                  socialpillersbusiness@gmail.com
+                  socialpillarsbusiness@gmail.com
                 </div>
               </div>
               <div className="ft-contact-item">
@@ -273,7 +273,7 @@ const Footer = () => {
               </div>
               <div className="ft-contact-item">
                 <div className="ft-contact-icon">{Icons.mapPin}</div>
-                <div className="ft-contact-text">Ratlam, Madhya Pradesh, India</div>
+                <div className="ft-contact-text">Madhya Pradesh, India</div>
               </div>
             </div>
           </div>

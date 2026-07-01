@@ -121,7 +121,7 @@ const Hero = () => {
         >
           <div className="hero-buttons">
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/919644398243"
               target="_blank"
               rel="noopener noreferrer"
               className="primary-btn"
@@ -130,7 +130,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://instagram.com/socialpillers"
+              href="https://instagram.com/socialpillars.in"
               target="_blank"
               rel="noopener noreferrer"
               className="secondary-btn"
